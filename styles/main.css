@@ -1,0 +1,149 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body { overflow-x: hidden; }
+
+#ttl {
+    font-size: 80px;
+    text-align: center;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    background-color: gainsboro;
+    padding: 120px;
+}
+
+#container {
+    background-color: gainsboro;
+    height: 70vh;
+}
+
+/*----------------------------[Header]---------------------------------*/
+header #cont i {
+    font-size: 50px;
+    margin: 10px 0px;
+    cursor: pointer;
+    color: darkgrey;
+    position: fixed;
+    float: right;
+    right: 20px;
+    transition-property: color;
+    transition-duration: .5s;
+}
+
+header #cont {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+}
+
+header #cont i:hover { color: gainsboro; }
+
+header #cont i:active { color: white; }
+
+header {
+    width: 100%;
+    height: 66px;
+    background-color: dimgray;
+    box-shadow: 0px 2px 2px black;
+    -webkit-user-select: none;
+    position: fixed;
+    opacity: .98;
+}
+
+/*----------------------------------------------------------------------*/
+
+/*-------------------------------[Box]----------------------------------*/
+
+.box {
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+    float: left;
+    cursor: pointer;
+    transition-property: color;
+    transition-duration: .5s;
+}
+
+#RedBox {
+    background-color: #f26868;
+    transition-property: background-color;
+    transition-duration: .5s;
+    width: 100%;
+    height: 100%;
+}
+
+#BlueBox {
+    background-color: #7777e5;
+    transition-property: background-color;
+    transition-duration: .5s;
+    width: 100%;
+    height: 100%;
+}
+
+#RedBox:hover { background-color: #f54646; }
+
+#BlueBox:hover { background-color: #5656f0; }
+
+#RedBox:active { background-color: #ff2d2d; }
+
+#BlueBox:active { background-color: #3535f7; }
+
+.choix {
+    text-align: center;
+    position: relative;
+    top: 30%;
+    font-family: arial, sans-serif;
+    color: gainsboro;
+    font-size: 45px;
+    -webkit-user-select: none;
+}
+
+/*----------------------------------------------------------------------*/
+
+/*-------------------------------[Footer]-------------------------------*/
+
+footer {
+    background-color: dimgray;
+    height: 9vh;
+    width: 100%;
+    float: left;
+}
+
+#desc {
+    text-align: center;
+    color: darkgray;
+    font-size: 12px;
+    font-family: arial, sans-serif;
+    position: relative;
+    top: 50%;
+    -webkit-user-select: none;
+}
+/*----------------------------------------------------------------------*/
+
+@media (max-width: 700px) {
+    #ttl {
+        font-size: 60px;
+        text-align: center;
+        padding: 130px 0px 80px 0px;
+    }
+    
+    .box {
+        height: 50%;
+        width: 100%;
+        box-sizing: border-box;
+        float: left;
+        margin: 10px px;
+        cursor: pointer;
+        transition-property: background-color;
+        transition-duration: .5s;
+    }
+}
+
+@media (max-width: 400px) {
+    #ttl { font-size: 40px; }
+    
+    .choix { font-size: 35px }; 
+    }
+}
