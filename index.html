@@ -14,12 +14,17 @@
         <title>Would you rather</title>
     </head>
     
-    <body>
+    <body onload="closeMenu();">
         <main>
             <header>
-                <div id="cont">
-                    <i class="fa fa-bars" aria-hidden="true"></i>
-                </div>
+                <nav id="menu">
+                    <ul>
+                        <li><i class="fa fa-bars" aria-hidden="true"></i></li>
+                        <li>List of choices</li>
+                        <li>Add a new choice</li>
+                        <li id="about">About</li>
+                    </ul>
+                </nav>
             </header>
             
             <section>
