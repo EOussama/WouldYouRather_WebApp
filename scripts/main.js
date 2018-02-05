@@ -31,7 +31,7 @@ burgerIcon.addEventListener('click', function () {
 window.onresize = function () {
     
     if(isOpen == false) {
-        if(window.innerWidth <= 700)
+        if(window.innerWidth <= 800)
             menu.style.right = '-335px'; 
         else
             menu.style.right = '-490px';
