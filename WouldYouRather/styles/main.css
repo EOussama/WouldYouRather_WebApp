@@ -1,0 +1,316 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body { overflow-x: hidden; }
+
+#ttl {
+    font-size: 80px;
+    text-align: center;
+    font-family: arial, sans-serif;
+    font-weight: bold;
+    background-color: gainsboro;
+    padding: 120px;
+    cursor: default;
+    -webkit-user-select: none;
+}
+
+#container {
+    background-color: gainsboro;
+    height: 70vh;
+}
+
+/*----------------------------[Header]---------------------------------*/
+
+header #menu ul li:hover { color: gainsboro; }
+
+header #menu ul li:active { color: white; }
+
+header {
+    width: 100%;
+    height: 66px;
+    background-color: dimgray;
+    box-shadow: 0px 2px 2px black;
+    -webkit-user-select: none;
+    position: fixed;
+    opacity: .98;
+}
+
+
+#menu {
+    position: relative;
+    float: right;
+    font-family: arial, sans-serif;
+    transition-property: right;
+    transition-duration: .5s;
+}
+
+#menu ul li:first-child {
+    font-size: 50px;
+    position: relative;
+    top: -16px
+}
+
+#menu ul li {
+    position: relative;
+    right: 0px;
+    font-weight: bold;
+    list-style-type: none;
+    margin: 23px 0px;
+    padding: 0px 20px;
+    float: left;
+    font-size: 20px;
+    cursor: pointer;
+    color: darkgrey;
+    transition-property: color;
+    transition-duration: .5s;
+}
+
+/*----------------------------------------------------------------------*/
+
+/*-------------------------------[Box]----------------------------------*/
+
+.box {
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+    float: left;
+    cursor: pointer;
+    transition-property: color;
+    transition-duration: .5s;
+}
+
+.box h2 {
+	position: relative;
+	top: 50%;
+	left: 50%;
+	width: 70%;
+	transform: translate(-50%, -50%);
+}
+
+#RedBox {
+    background-color: #f26868;
+    transition-property: background-color;
+    transition-duration: .5s;
+    width: 100%;
+    height: 100%;
+}
+
+#BlueBox {
+    background-color: #7777e5;
+    transition-property: background-color;
+    transition-duration: .5s;
+    width: 100%;
+    height: 100%;
+}
+
+#RedBox:hover { background-color: #f54646; }
+
+#BlueBox:hover { background-color: #5656f0; }
+
+#RedBox:active { background-color: #ff2d2d; }
+
+#BlueBox:active { background-color: #3535f7; }
+
+.choix {
+    text-align: center;
+    position: relative;
+    font-family: arial, sans-serif;
+    color: gainsboro;
+    font-size: 30px;
+    -webkit-user-select: none;
+}
+
+/*----------------------------------------------------------------------*/
+
+/*-------------------------------[Footer]-------------------------------*/
+
+footer {
+    background-color: dimgray;
+    height: 9vh;
+    width: 100%;
+    float: left;
+}
+
+#desc {
+    text-align: center;
+    color: darkgray;
+    font-size: 12px;
+    font-family: arial, sans-serif;
+    position: relative;
+    top: 50%;
+    -webkit-user-select: none;
+}
+/*----------------------------------------------------------------------*/
+
+/*---------------------------------[OR]---------------------------------*/
+
+#or {
+	font-size: 55px;
+	font-family: arial;
+	font-weight: bold;
+	color: white;
+	border-radius: 50%;
+	background-color: black;
+	width: 130px;
+	height: 130px;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#or span {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-user-select: none;
+}
+/*----------------------------------------------------------------------*/
+
+/*--------------------------------[Modal]-------------------------------*/
+#modal {
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.85);
+	z-index: 98;
+	display: none;
+	opacity: 0;
+	transition-property: opacity;
+	transition-duration: .5s;
+}
+/*----------------------------------------------------------------------*/
+
+/*----------------------------[Choices Liste]---------------------------*/
+#CBox {
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	transform: translate(-50%, 0px);
+	width: 400px;
+	height: 450px;
+	background-color: #b5c1cc;
+	border: 2px solid #6c6d72;
+	border-radius: 5px;
+	box-shadow: 2px 2px 5px black;
+	z-index: 99;
+}
+
+#CBox #closeBtn {
+	position: relative;
+	left: 92%;
+	top: 8px;
+	font-size: 28px;
+	color: #6c6d72;
+	cursor: pointer;
+	z-index: 1;
+	transition-property: color;
+	transition-duration: .5s;
+}
+
+#CBox h3 {
+	position: relative;
+	top: -19px;
+	left: 10px;
+	font-family: arial, sans-serif;
+	font-size: 25px;
+	color: #6c6d72;
+	text-shadow: 1px 1px 2px black;
+}
+
+#CBox hr {
+	position: relative;
+	top: -10px;
+	border: none;
+	border-bottom: 2px solid #6c6d72;
+}
+
+#CBox #closeBtn:hover { color: #8a8a8b; }
+
+#CBox #choicesSec {
+	position: relative;
+	top: -10px;
+	left: 0px;
+	overflow-y: scroll;
+	height: 400px;
+}
+
+#CBox #choicesSec ul {
+	list-style-type: none;
+	font-family: arial, sans-serif;
+}
+
+#CBox #choicesSec ul li {
+	min-height: 30px;
+	padding: 8px;
+	text-align: center;
+	border-bottom: 1px solid black;
+	cursor: pointer;
+	transition-property: background-color;
+	transition-duration: .3s;
+}
+
+
+#CBox #choicesSec ul li:nth-child(odd) { background-color: aliceblue; }
+
+#CBox #choicesSec ul li:nth-child(even) { background-color: #cfd6dd; }
+
+#CBox #choicesSec ul li:hover { background-color: #bac0c6; }
+
+/*----------------------------------------------------------------------*/
+
+@media (max-width: 800px) {
+    #ttl {
+        font-size: 60px;
+        text-align: center;
+        padding: 130px 0px 80px 0px;
+    }
+    
+    .box {
+        height: 50%;
+        width: 100%;
+        box-sizing: border-box;
+    }
+	
+	.box h2 { transform: translate(-50%, -25%); }
+    
+    #menu ul li:first-child {
+        font-size: 40px;
+        top: -12px
+    }
+
+    
+    #menu ul li {
+        padding: 0px 10px;
+        font-size: 15px;
+    }
+    
+    .box h2 { height: 78%; }
+    
+    .choix { padding-top: 60px; }
+	
+	#or {
+		font-size: 40px;
+		width: 100px;
+		height: 100px;
+	}
+}
+
+@media (max-width: 500px) {
+    #ttl { font-size: 40px; }
+    
+    .choix {
+        font-size: 35px;
+        padding-top: 60px;
+    }
+	
+	.box h2 {
+		font-size: 25px;
+		transform: translate(-50%, -35%);
+	}
+}
