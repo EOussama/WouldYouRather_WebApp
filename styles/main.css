@@ -313,3 +313,18 @@ div.modal form input[type="button"], div.modal form input[type="reset"] {
 div.modal form input[type="button"]:hover, div.modal form input[type="reset"]:hover { background-color: #eaeaea; }
 
 div.modal ul.choiceList li div { flex: 1; }
+
+/*----------[Media]----------*/
+@media(max-width:650px) {
+	nav { display: none; }
+	
+	h1 { font-size: 50px; }
+	
+	section { flex-direction: column; }
+	
+	section .stats { top: 80% !important; }
+	
+	section .separator { top: -50px !important; }
+	
+	footer { display: none; }
+}

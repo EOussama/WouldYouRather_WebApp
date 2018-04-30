@@ -8,7 +8,7 @@ Similar to that popular social game, “Would you Rather”, this one is a very 
 - [X] Modern flat design
 - [X] Responsive design
 - [X] Fluid animations/transitions
-- [ ] Adding/Removing/Editting choices
+- [X] Adding/Editting choices
+- [X] Choice statistics
 - [ ] Saving choices
-- [ ] Choice statistics
 
