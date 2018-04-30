@@ -301,7 +301,7 @@ div.modal form input {
 	border-radius: 3px;
 }
 
-div.modal form input[type="submit"], div.modal form input[type="reset"] {
+div.modal form input[type="button"], div.modal form input[type="reset"] {
 	background-color: white;
 	
 	cursor: pointer;
@@ -310,6 +310,6 @@ div.modal form input[type="submit"], div.modal form input[type="reset"] {
 	transition-duration: .3s;
 }
 
-div.modal form input[type="submit"]:hover, div.modal form input[type="reset"]:hover { background-color: #eaeaea; }
+div.modal form input[type="button"]:hover, div.modal form input[type="reset"]:hover { background-color: #eaeaea; }
 
 div.modal ul.choiceList li div { flex: 1; }

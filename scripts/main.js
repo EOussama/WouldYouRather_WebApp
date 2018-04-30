@@ -66,8 +66,8 @@ function showStats(redBtn, blueBtn) {
 		redStats = redBtn.querySelector('p.stats'),
 		blueStats = blueBtn.querySelector('p.stats');
 	
-	redStats.textContent = `${choices[randNum].count1} chose this.`;
-	blueStats.textContent = `${choices[randNum].count2} chose this.`;
+	redStats.textContent = `${choices[randNum].count1} ${choices[randNum].count1 == 1 ? 'person' : 'people'} chose this.`;
+	blueStats.textContent = `${choices[randNum].count2} ${choices[randNum].count1 == 1 ? 'person' : 'people'} chose this.`;
 	
 	redStats.style.opacity = blueStats.style.opacity = '1';
 }
@@ -88,6 +88,19 @@ function openModal(title = 'title', body = '<p>Lorem Ipsum.</p>') {
 function closeModal() {
 	document.querySelector('div.modal').style.opacity = '0';
 	setTimeout(() => document.querySelector('div.modal').style.display = 'none', 500);
+}
+
+function submitHandler() {
+	let newChoice = {
+		choice1: document.querySelector('div.modal form input.choice1').value,
+		choice2: document.querySelector('div.modal form input.choice2').value,
+		count1: 0,
+		count2: 0
+	};
+	
+	addChoice(newChoice);
+	closeModal();
+	setTimeout(() => openModal('Notice', '<p>Choice was successfully added!</p>'), 500);
 }
 
 window.addEventListener('load', () => {
@@ -152,10 +165,10 @@ window.addEventListener('load', () => {
 		let body = `
 			<form>
 				<label>First choice</label>
-				<input type="text" placeholder="Input a valid choice here..." maxlength="40" required>
+				<input type="text" class="choice1" placeholder="Input a valid choice here..." maxlength="40" required>
 				<label>Second choice</label>
-				<input type="text" placeholder="Input a valid choice here..." maxlength="40" required>
-				<input type="submit" value="Add">
+				<input type="text" class="choice2" placeholder="Input a valid choice here..." maxlength="40" required>
+				<input type="button" value="Add" onclick="submitHandler();">
 				<input type="reset" value="Clear">
 			</form>
 		`;
