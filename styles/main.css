@@ -203,3 +203,110 @@ div.separator span#next {
 	transition-property: padding-left;
 	transition-duration: .3s;
 }
+
+/*-----------[Modal]-----------*/
+div.modal {
+	display: none;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	
+	background-color: rgba(0, 0, 0, 0.6);
+	
+	z-index: 100;
+	opacity: 0;
+	
+	transition-property: opacity;
+	transition-duration: .5s;
+}
+
+div.dialog {
+	width: 500px;
+	margin: 100px auto;
+	padding: 20px;
+	
+	border: 1px solid var(--primaryColor);
+	border-radius: 3px;
+	
+	background-color: white;
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.3);
+	
+	animation-name: open;
+	animation-duration: .5s;
+}
+
+div.dialog-header {
+	display: flex;
+	margin-bottom: 30px;
+	
+	font-size: 1.7em;
+	text-transform: capitalize;
+}
+
+div.dialog-header h3:first-child { flex: 19; }
+
+div.dialog-header h3:last-child {
+	flex: 1;
+	
+	cursor: pointer;
+	user-select: none;
+}
+
+div.dialog-body { text-align: justify; }
+
+div.dialog-footer { margin-top: 20px; }
+
+div.dialog-footer p small { color: gray; }
+
+@keyframes open {
+	from { margin-top: -50px; }
+	to { margin-top: 100px; }
+}
+
+div.modal ul.choiceList { list-style-type: none; }
+
+div.modal ul.choiceList li {
+	display: flex;
+	padding: 5px 10px;
+	
+	transition-property: background-color;
+	transition-duration: .3s;
+	
+	cursor: pointer;
+}
+
+div.modal ul.choiceList li:hover {
+	background-color: #f0f0f0;
+	font-weight: bold;
+}
+
+div.modal form {
+	display: grid;
+	grid-template-columns: 1fr 3fr;
+	grid-row-gap: 10px;
+	grid-column-gap: 5px;
+}
+
+div.modal form label { font-weight: bold; }
+
+div.modal form input {
+	padding: 5px 10px;
+	
+	border: 1px solid rgba(0, 0, 0, 0.3);
+	border-radius: 3px;
+}
+
+div.modal form input[type="submit"], div.modal form input[type="reset"] {
+	background-color: white;
+	
+	cursor: pointer;
+	
+	transition-property: background-color;
+	transition-duration: .3s;
+}
+
+div.modal form input[type="submit"]:hover, div.modal form input[type="reset"]:hover { background-color: #eaeaea; }
+
+div.modal ul.choiceList li div { flex: 1; }

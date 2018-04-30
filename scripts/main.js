@@ -1,3 +1,4 @@
+"use strict";
 /*-----------[Variables]-----------*/
 const choices = [
 	{
@@ -73,11 +74,28 @@ function hideStats(redBtn, blueBtn) {
 	blueBtn.querySelector('p.stats').style.opacity = '0';
 }
 
+function openModal(title = 'title', body = '<p>Lorem Ipsum.</p>') {
+	document.querySelector('div.modal div.dialog div.dialog-header h3:first-child').textContent = title;
+	document.querySelector('div.modal div.dialog div.dialog-body').innerHTML = body;
+	
+	document.querySelector('div.modal').style.display = 'block';
+	setTimeout(() => document.querySelector('div.modal').style.opacity = '1', 100);
+}
+
+function closeModal() {
+	document.querySelector('div.modal').style.opacity = '0';
+	setTimeout(() => document.querySelector('div.modal').style.display = 'none', 500);
+}
+
 window.addEventListener('load', () => {
 	const
 		redBtn = document.getElementById('red'),
 		blueBtn = document.getElementById('blue'),
-		sepBtn = document.querySelector('div.separator');
+		sepBtn = document.querySelector('div.separator'),
+		modalCloseBtn = document.querySelector('i.fa.fa-times'),
+		newBtn = document.getElementById('newBtn'),
+		listBtn = document.getElementById('listBtn'),
+		aboutBtn = document.getElementById('aboutBtn');
 	
 	redBtn.addEventListener('click', () => {
 		if(allow === true) {
@@ -102,6 +120,44 @@ window.addEventListener('load', () => {
 		
 		hideStats(redBtn, blueBtn);
 		getRandomChoice(redBtn, blueBtn);
+	});
+	
+	modalCloseBtn.addEventListener('click', closeModal);
+	window.addEventListener('click', (e) => {
+		if(e.target === document.querySelector('div.modal'))
+			closeModal();
+	});
+	
+	aboutBtn.addEventListener('click', () => {
+		let body = "Similar to that popular social game, “<b>Either</b>”, this one is a very simple light version of it, it's not any better or anything of that sort, it was solely made for experimental purposes, a standalone project with <b>HTML</b>, <b>CSS</b>, a bit of <b>Javascript</b>, and some <i>love</i>.";
+		
+		openModal('about', body);
+	});
+	
+	listBtn.addEventListener('click', () => {
+		let body = '<ul class="choiceList">';
+		
+		for(let choice of choices)
+			body += `<li><div>${choice.choice1}</div><div>${choice.choice2}</div></li>`;
+		
+		body += "</ul>";
+		
+		openModal(`choices list (${choices.length})`, body);
+	});
+	
+	newBtn.addEventListener('click', () => {
+		let body = `
+			<form>
+				<label>First choice</label>
+				<input type="text" placeholder="Input a valid choice here..." maxlength="40" required>
+				<label>Second choice</label>
+				<input type="text" placeholder="Input a valid choice here..." maxlength="40" required>
+				<input type="submit" value="Add">
+				<input type="reset" value="Clear">
+			</form>
+		`;
+		
+		openModal('new choice', body);
 	});
 	
 	getRandomChoice(redBtn, blueBtn);
