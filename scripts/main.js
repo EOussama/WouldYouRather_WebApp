@@ -1,4 +1,3 @@
-"use strict";
 /*-----------[Variables]-----------*/
 const choices = [
 	{
@@ -56,6 +55,10 @@ function getRandomChoice(redBtn, blueBtn) {
 	
 	redBtn.querySelector('p.choice').textContent = choices[randNum].choice1;
 	blueBtn.querySelector('p.choice').textContent = choices[randNum].choice2;
+}
+
+function addChoice(choice) {
+	choices.push(choice);
 }
 
 function showStats(redBtn, blueBtn) {
