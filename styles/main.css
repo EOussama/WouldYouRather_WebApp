@@ -121,6 +121,18 @@ div.box p {
 	font-size: 40px;
 }
 
+div.box p.stats {
+	position: absolute;
+	top: 90%;
+	
+	font-size: 20px;
+	
+	opacity: 0;
+	
+	transition-property: opacity;
+	transition-duration: .5s;
+}
+
 div#red { background-color: var(--redColor); }
 div#red:hover { background-color: var(--redColorLight); }
 
