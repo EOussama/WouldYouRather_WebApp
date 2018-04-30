@@ -270,7 +270,7 @@ div.dialog-footer p small { color: gray; }
 
 div.modal ul.choiceList { list-style-type: none; }
 
-div.modal ul.choiceList li {
+div.modal ul.choiceList a li {
 	display: flex;
 	padding: 5px 10px;
 	
@@ -280,7 +280,7 @@ div.modal ul.choiceList li {
 	cursor: pointer;
 }
 
-div.modal ul.choiceList li:hover {
+div.modal ul.choiceList a li:hover {
 	background-color: #f0f0f0;
 	font-weight: bold;
 }

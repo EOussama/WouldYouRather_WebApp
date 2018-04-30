@@ -57,9 +57,9 @@ function getRandomChoice(redBtn, blueBtn) {
 	blueBtn.querySelector('p.choice').textContent = choices[randNum].choice2;
 }
 
-function addChoice(choice) {
-	choices.push(choice);
-}
+function addChoice(choice) { choices.push(choice); }
+
+function editChoice (id, choice) { choices[id] = choice; }
 
 function showStats(redBtn, blueBtn) {
 	let
@@ -101,6 +101,35 @@ function submitHandler() {
 	addChoice(newChoice);
 	closeModal();
 	setTimeout(() => openModal('Notice', '<p>Choice was successfully added!</p>'), 500);
+}
+
+function editHandler(id) {
+	let newChoice = {
+		choice1: document.querySelector('div.modal form input.choice1').value,
+		choice2: document.querySelector('div.modal form input.choice2').value,
+		count1: choices[id].count1,
+		count2: choices[id].count2
+	};
+	
+	editChoice(id, newChoice);
+	closeModal();
+	setTimeout(() => openModal('Notice', '<p>Choice was successfully edited!</p>'), 500);
+}
+
+function displayInfo(id) {
+	let body = `
+			<form>
+				<label>First choice</label>
+				<input type="text" class="choice1" placeholder="Input a valid choice here..." maxlength="40" value="${choices[id].choice1}" required>
+				<label>Second choice</label>
+				<input type="text" class="choice2" placeholder="Input a valid choice here..." maxlength="40" value="${choices[id].choice2}" required>
+				<input type="button" value="Edit" onclick="editHandler(${id});">
+				<input type="reset" value="Reset">
+			</form>
+		`;
+	
+	closeModal();
+	setTimeout(() => openModal(`Choice info [${id + 1}]`, body), 500);
 }
 
 window.addEventListener('load', () => {
@@ -153,8 +182,8 @@ window.addEventListener('load', () => {
 	listBtn.addEventListener('click', () => {
 		let body = '<ul class="choiceList">';
 		
-		for(let choice of choices)
-			body += `<li><div>${choice.choice1}</div><div>${choice.choice2}</div></li>`;
+		for(let i = 0; i<choices.length; i++)
+			body += `<a onclick="displayInfo(${i});"><li><div>${choices[i].choice1}</div><div>${choices[i].choice2}</div></li></a>`;
 		
 		body += "</ul>";
 		
