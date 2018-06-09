@@ -67,7 +67,7 @@ function showStats(redBtn, blueBtn) {
 		blueStats = blueBtn.querySelector('p.stats');
 	
 	redStats.textContent = `${choices[randNum].count1} ${choices[randNum].count1 == 1 ? 'person' : 'people'} chose this.`;
-	blueStats.textContent = `${choices[randNum].count2} ${choices[randNum].count1 == 1 ? 'person' : 'people'} chose this.`;
+	blueStats.textContent = `${choices[randNum].count2} ${choices[randNum].count2 == 1 ? 'person' : 'people'} chose this.`;
 	
 	redStats.style.opacity = blueStats.style.opacity = '1';
 }
